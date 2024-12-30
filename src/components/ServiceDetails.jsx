@@ -12,13 +12,11 @@ export default function ServiceDetails() {
       try {
         setLoading(true);
         const response = await fetch(
-          `https://doctorhelper.pythonanywhere.com/api/v1/service/${id}/`
+          `https://doctorhelaynan nargizadan sorash shartmiper.pythonanywhere.com/api/v1/service/${id}/`
         );
-
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
-
         const data = await response.json();
         setService(data); 
       } catch (err) {
@@ -28,7 +26,6 @@ export default function ServiceDetails() {
         setLoading(false);
       }
     };
-
     fetchService();
   }, [id]);
 
@@ -120,7 +117,7 @@ export default function ServiceDetails() {
                   </p>
                   {service.clinic.latitude && service.clinic.longitude && (
                     <p className="text-gray-600">
-                      Location: {service.clinic.latitude},{" "}
+                      Location: {service.clinic.latitude},
                       {service.clinic.longitude}
                     </p>
                   )}
