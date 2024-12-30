@@ -62,7 +62,6 @@ export default function ServiceDetails() {
         {service.type?.name}
       </h1>
 
-      {/* Service Type Icon */}
       {service.type?.icon && (
         <div className="mb-8 flex justify-center">
           <img
@@ -73,7 +72,6 @@ export default function ServiceDetails() {
         </div>
       )}
 
-      {/* Doctors Section */}
       <div className="mb-8">
         <h2 className="text-2xl font-bold mb-4">Doctors</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -101,7 +99,6 @@ export default function ServiceDetails() {
         </div>
       </div>
 
-      {/* Clinic Information */}
       {service.clinic && (
         <div className="bg-white rounded-lg shadow-md p-6">
           <h2 className="text-2xl font-bold mb-4">Clinic Information</h2>

@@ -12,7 +12,7 @@ import {
   CssBaseline,
   Box,
 } from "@mui/material";
-import { Menu as MenuIcon, Home, Group } from "@mui/icons-material";
+import { Menu, Home, Group } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 
 const NAV_ITEMS = [
@@ -42,7 +42,7 @@ const Navbar = () => {
       >
         <Toolbar>
           <IconButton color="inherit" edge="start" onClick={toggleDrawer}>
-            <MenuIcon />
+            <Menu />
           </IconButton>
           <Typography variant="h6" noWrap>
             <span className="select-none"> Hospital</span>
