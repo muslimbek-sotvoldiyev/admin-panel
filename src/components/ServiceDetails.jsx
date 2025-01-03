@@ -12,13 +12,15 @@ export default function ServiceDetails() {
       try {
         setLoading(true);
         const response = await fetch(
-          `https://doctorhelaynan nargizadan sorash shartmiper.pythonanywhere.com/api/v1/service/${id}/`
+          `https://doctorhelper.pythonanywhere.com/api/v1/service/${id}/`
         );
+
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
+
         const data = await response.json();
-        setService(data); 
+        setService(data);
       } catch (err) {
         console.error("Fetch error:", err);
         setError(err.message);
@@ -26,6 +28,7 @@ export default function ServiceDetails() {
         setLoading(false);
       }
     };
+
     fetchService();
   }, [id]);
 
@@ -59,6 +62,7 @@ export default function ServiceDetails() {
         {service.type?.name}
       </h1>
 
+      {/* Service Type Icon */}
       {service.type?.icon && (
         <div className="mb-8 flex justify-center">
           <img
@@ -69,6 +73,7 @@ export default function ServiceDetails() {
         </div>
       )}
 
+      {/* Doctors Section */}
       <div className="mb-8">
         <h2 className="text-2xl font-bold mb-4">Doctors</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -96,6 +101,7 @@ export default function ServiceDetails() {
         </div>
       </div>
 
+      {/* Clinic Information */}
       {service.clinic && (
         <div className="bg-white rounded-lg shadow-md p-6">
           <h2 className="text-2xl font-bold mb-4">Clinic Information</h2>
@@ -117,7 +123,7 @@ export default function ServiceDetails() {
                   </p>
                   {service.clinic.latitude && service.clinic.longitude && (
                     <p className="text-gray-600">
-                      Location: {service.clinic.latitude},
+                      Location: {service.clinic.latitude},{" "}
                       {service.clinic.longitude}
                     </p>
                   )}
